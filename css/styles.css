@@ -46,8 +46,38 @@ section{
     font-size: 1.8rem;
 }
 
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
 .answer p{
     padding-top: 1rem;
     font-size: 1.4rem;
 
+}
+
+.faq.active .answer{
+    max-height:300px;
+    animation: fade 1s ease-in-out;
+}
+
+.faq.active svg{
+    transform: rotate(180deg);
+}
+
+svg {
+    transition: transform 1.2 ease-in;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translate(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
 }
